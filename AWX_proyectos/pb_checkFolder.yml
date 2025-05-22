@@ -1,0 +1,6 @@
+- name: Ejecutar el rol
+  hosts : localhost
+  become: yes
+  roles: 
+    - checkFolder
+    

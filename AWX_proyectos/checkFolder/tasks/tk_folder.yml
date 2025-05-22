@@ -1,0 +1,16 @@
+- name: Crear una carpeta
+  file:
+    path: "{{ ruta }}"
+    state: directory
+    mode: '0755'
+
+- name: verificar que existe el directorio
+  stat:
+    path: "{{ ruta }}"
+  register: resultado
+
+- name: mostrar el resultado
+  debug:
+    msg: " El directorio se ha creado : {{resultado.stat.exists}}"
+
+  
